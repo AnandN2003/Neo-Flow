@@ -3,38 +3,38 @@ import { hardhat, localhost, polygon, polygonMumbai } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
 import { getDefaultWallets } from '@rainbow-me/rainbowkit';
 
-// Determine which chains to use based on environment
-const getChains = () => {
-  // ALWAYS include local networks first for demo
-  const localChains = [
-    {
-      id: 1337,
-      name: 'Localhost 8545',
-      network: 'localhost',
-      nativeCurrency: {
-        decimals: 18,
-        name: 'Ether',
-        symbol: 'ETH',
-      },
-      rpcUrls: {
-        public: { http: ['http://localhost:8545'] },
-        default: { http: ['http://localhost:8545'] },
-      },
-      blockExplorers: {
-        default: { name: 'Local', url: 'http://localhost:8545' },
-      },
-    },
-    localhost,
-    hardhat,
-  ];
-
-  // ALWAYS return local chains + others for maximum compatibility
-  return [...localChains, polygonMumbai, polygon];
+// Define localhost chain explicitly
+const localhostChain = {
+  id: 1337,
+  name: 'Localhost 8545',
+  network: 'localhost',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'Ether',
+    symbol: 'ETH',
+  },
+  rpcUrls: {
+    public: { http: ['http://localhost:8545'] },
+    default: { http: ['http://localhost:8545'] },
+  },
+  blockExplorers: {
+    default: { name: 'Local', url: 'http://localhost:8545' },
+  },
+  testnet: true,
 };
+
+// ALWAYS include ALL networks for maximum compatibility
+const supportedChains = [
+  localhostChain,    // Localhost first for demo
+  localhost,         // Wagmi's localhost
+  hardhat,           // Hardhat network
+  polygonMumbai,     // Mumbai testnet
+  polygon,           // Polygon mainnet
+];
 
 // Configure chains & providers
 const { chains, publicClient } = configureChains(
-  getChains(),
+  supportedChains,
   [publicProvider()]
 );
 
