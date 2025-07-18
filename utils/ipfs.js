@@ -153,5 +153,14 @@ export const uploadCampaignMetadata = async (metadata) => {
     version: '1.0',
   };
 
-  return await uploadJSONToIPFS(campaignData);
+  // For demo, always use mock data
+  console.log('Demo mode: Creating campaign with mock IPFS...');
+  const mockHash = `demo_campaign_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+  
+  return {
+    success: true,
+    hash: mockHash,
+    url: `https://demo-ipfs.local/${mockHash}`,
+    metadata: campaignData,
+  };
 };

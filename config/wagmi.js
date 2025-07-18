@@ -5,11 +5,11 @@ import { getDefaultWallets } from '@rainbow-me/rainbowkit';
 
 // Determine which chains to use based on environment
 const getChains = () => {
-  // Always include local networks for demo purposes
+  // ALWAYS include local networks first for demo
   const localChains = [
     {
       id: 1337,
-      name: 'Localhost',
+      name: 'Localhost 8545',
       network: 'localhost',
       nativeCurrency: {
         decimals: 18,
@@ -20,21 +20,16 @@ const getChains = () => {
         public: { http: ['http://localhost:8545'] },
         default: { http: ['http://localhost:8545'] },
       },
+      blockExplorers: {
+        default: { name: 'Local', url: 'http://localhost:8545' },
+      },
     },
     localhost,
     hardhat,
   ];
 
-  if (process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_CHAIN_ID !== '1337') {
-    // Production: Use Polygon Mainnet + local for demo
-    return [polygon, ...localChains];
-  } else if (process.env.NEXT_PUBLIC_NETWORK === 'testnet') {
-    // FREE Testnet: Use Mumbai testnet + local for demo
-    return [polygonMumbai, ...localChains];
-  } else {
-    // Development: Use local networks + testnets
-    return [...localChains, polygonMumbai, polygon];
-  }
+  // ALWAYS return local chains + others for maximum compatibility
+  return [...localChains, polygonMumbai, polygon];
 };
 
 // Configure chains & providers
