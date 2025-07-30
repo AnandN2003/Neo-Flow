@@ -176,7 +176,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Developer
 
 **Nithyan S**
-- GitHub: [@nithyan-s](https://github.com/nithyan-s)
+- GitHub : [@nithyan-s](https://github.com/nithyan-s)
 - Project: [Neo-Flow](https://github.com/nithyan-s/Neo-Flow)
 
 ## 🙏 Acknowledgments
