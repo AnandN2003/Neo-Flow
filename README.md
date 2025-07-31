@@ -59,7 +59,7 @@
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/nithyan-s/Neo-Flow.git
+git clone https://github.com/AnandN2003/Neo-Flow.git
 cd Neo-Flow
 ```
 
@@ -175,9 +175,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Developer
 
-**Nithyan S**
-- GitHub : [@nithyan-s](https://github.com/nithyan-s)
-- Project: [Neo-Flow](https://github.com/nithyan-s/Neo-Flow)
+**Anand N**
+- GitHub : [@AnandN2003](https://github.com/AnandN2003)
+- Project: [Neo-Flow](https://github.com/AnandN2003/Neo-Flow)
 
 ## 🙏 Acknowledgments
 
