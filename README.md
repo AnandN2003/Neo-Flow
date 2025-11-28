@@ -14,7 +14,7 @@
 - **Campaign Creation & Management** - Create and manage fundraising campaigns
 - **Secure Wallet Integration** - Connect with MetaMask and other Web3 wallets
 - **Real-time Campaign Tracking** - Live updates on funding progress
-- **Smart Contract Integration** - Secure, transparent blockchain transactions
+- **Smart Contract Integration** - Secure and transparent blockchain transactions
 
 ### 🎯 **NeoFlow Exclusive Features**
 - **🏅 Leaderboard System** - Track top donators and fundraisers
